@@ -3,6 +3,26 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    result = []
+
+    for arr in range(0, len(arrays)):
+        currentList = {}
+
+        for arrItem in arrays[arr]:
+              
+            if arr == 0:
+                currentList[arrItem] = arrItem
+
+            if arr != 0:
+                if arrItem not in currentList and arrItem in  previousList:
+                    currentList[arrItem] = arrItem
+                    if arr == len(arrays) - 1 : 
+                        result.append(currentList[arrItem])
+
+                     
+
+        previousList = currentList
+
 
     return result
 
